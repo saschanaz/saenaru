@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru/src/dic.c,v 1.28 2006/12/16 09:30:24 wkpark Exp $
+ * $Id: dic.c,v 1.44 2010/03/10 14:00:08 wkpark Exp $
  */
 
 #include <windows.h>
@@ -2606,7 +2606,7 @@ int CopyCandidateStringsFromDictionary(HANDLE hFile, LPMYSTR lpRead, LPMYSTR lpB
         }
 
         if ((lpToken != NULL && (iFlag == 0 && MYTEXT('[') == *lpToken)) ||
-                (lpWrite != NULL && (dwBufLen - dwWritten <= 0)) || force || !dwRead) {
+                (lpWrite != NULL && (dwBufLen - dwWritten <= 1)) || force || !dwRead) {
             break;
         }
 

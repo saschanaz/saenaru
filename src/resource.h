@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru/src/resource.h,v 1.11 2006/11/20 08:42:28 wkpark Exp $
+ * $Id: resource.h,v 1.16 2010/03/09 03:52:58 wkpark Exp $
  */
 
 //{{NO_DEPENDENCIES}}
@@ -84,6 +84,7 @@
 #define IDC_QWERTY_HOTKEY_SUPPORT 2009
 #define IDC_JAMOS               2010
 #define IDC_HANJA_CAND_SPACE    2011
+#define IDC_SIMILAR_WORDS       2012
 
 /* string tables */
 #define IDS_CONFIGNAME              1000

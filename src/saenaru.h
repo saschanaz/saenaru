@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru/src/saenaru.h,v 1.18 2006/12/16 09:30:24 wkpark Exp $
+ * $Id: saenaru.h,v 1.29 2010/03/09 03:52:58 wkpark Exp $
  */
 
 #include <indicml.h>
@@ -84,6 +84,7 @@
 #define QWERTY_HOTKEY_SUPPORT  0x00000400
 #define HANGUL_JAMOS           0x00000800
 #define HANJA_CAND_WITH_SPACE  0x00001000
+#define SEARCH_SIMILAR_WORDS   0x00002000
 #define SCANCODE_BASED         0x00010000
 
 /* for Unicode SAENARU */

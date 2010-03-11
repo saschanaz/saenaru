@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru.h,v 1.29 2010/03/09 03:52:58 wkpark Exp $
+ * $Id: saenaru.h,v 1.30 2010/03/10 14:00:08 wkpark Exp $
  */
 
 #include <indicml.h>
@@ -117,7 +117,7 @@ typedef TCHAR             MYCHAR;
 #define MAXCANDSTRSIZE          16
 #define MAXGLCHAR               32
 //#define MAXCANDSTRNUM           32
-#define MAXCANDSTRNUM           256
+#define MAXCANDSTRNUM           300
 
 
 /* for GlobalAlloc */

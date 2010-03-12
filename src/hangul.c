@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: hangul.c,v 1.52 2010/03/11 10:28:48 wkpark Exp $
+ * $Id: hangul.c,v 1.53 2010/03/11 10:50:02 wkpark Exp $
  */
 
 #include <windows.h>
@@ -3013,7 +3013,7 @@ ac_exit:
     if ( dwGCR != GCS_RESULTALL ) {
 	if (!cs) {
             MakeResultString(hIMC,TRUE);
-	} else if (ic.len > 1 && // 초성+중성 두글자 이상일 경우.
+	} else if (lpCompStr->dwCompStrLen > 1 && // 초성+중성 두글자 이상일 경우.
 		IsCompStr(hIMC) &&
 		(fdwConversion & IME_CMODE_HANJACONVERT) &&
                     (fdwConversion & IME_CMODE_NATIVE)) {

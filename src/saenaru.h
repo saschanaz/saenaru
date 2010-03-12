@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru.h,v 1.30 2010/03/10 14:00:08 wkpark Exp $
+ * $Id: saenaru.h,v 1.31 2010/03/11 13:41:47 wkpark Exp $
  */
 
 #include <indicml.h>
@@ -534,6 +534,7 @@ int PASCAL set_automata(UINT);
 
 BOOL hangul_is_syllable(WCHAR);
 void PASCAL hangul_syllable_to_jamo(WCHAR, WCHAR*, WCHAR*, WCHAR*);
+WCHAR PASCAL hangul_jamo_to_syllable(WCHAR, WCHAR, WCHAR);
 
 /* hanjaidx.c       */
 UINT PASCAL is_ksx1002(UINT);

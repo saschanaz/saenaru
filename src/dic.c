@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.48 2010/03/11 13:41:47 wkpark Exp $
+ * $Id: dic.c,v 1.49 2010/03/12 04:25:54 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1309,6 +1309,11 @@ LPBYTE lpbKeyState;
     int next=0;
     UINT select=0, changed=0;
     LRESULT candOk=FALSE;
+
+    if ( (dwOptionFlag & USE_SHIFT_SPACE) && wParam == VK_SPACE && IsCTLPushed(lpbKeyState))
+    {
+        wParam = VK_F9;
+    }
 
     // Candidate문자 선택
     if (IsConvertedCompStr(hIMC))

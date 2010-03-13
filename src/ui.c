@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: ui.c,v 1.34 2010/03/11 10:28:48 wkpark Exp $
+ * $Id: ui.c,v 1.35 2010/03/12 02:08:57 wkpark Exp $
  */
 
 /**********************************************************************/
@@ -492,6 +492,10 @@ LPARAM lParam;
             }
             if (lParam)
                 MyDebugPrint((TEXT("* hKL=%x\r\n"),lParam));
+
+            if (!dwScanCodeBased &&
+                    ((HANDLE)lParam != LongToHandle(0xE0120412) || (HANDLE)lParam != LongToHandle(0xE0130412)))
+                dwScanCodeBased = 1;
             //
             break;
 

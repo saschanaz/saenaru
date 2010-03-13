@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: hangul.c,v 1.54 2010/03/12 04:25:54 wkpark Exp $
+ * $Id: hangul.c,v 1.55 2010/03/12 10:30:47 wkpark Exp $
  */
 
 #include <windows.h>
@@ -2562,7 +2562,7 @@ LPBYTE lpbKeyState;
     if (fdwConversion & IME_CMODE_NATIVE) {
 	hkey = keyToHangulKey( code );
 
-	if (dwScanCodeBased && hkey == code) {
+	if (dwScanCodeBased > 1 && hkey == code) {
 	    // there are no keymap entry.
 	    // use original VK codes.
 	    hkey = code = (WORD) HIWORD(wParam);

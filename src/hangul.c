@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: hangul.c,v 1.55 2010/03/12 10:30:47 wkpark Exp $
+ * $Id: hangul.c,v 1.56 2010/03/13 13:38:30 wkpark Exp $
  */
 
 #include <windows.h>
@@ -2494,7 +2494,7 @@ LPARAM lParam;
 LPBYTE lpbKeyState;
 {
     WORD code = (WORD) HIWORD(wParam);
-    WORD scan = (WORD) HIWORD(lParam);
+    WORD scan = (WORD) (HIWORD(lParam) & 0xFF);
     WORD ocode;
 
     LPMYSTR lpchText;

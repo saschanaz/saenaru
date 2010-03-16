@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.49 2010/03/12 04:25:54 wkpark Exp $
+ * $Id: dic.c,v 1.50 2010/03/12 14:13:13 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1655,6 +1655,12 @@ LPBYTE lpbKeyState;
                                                     ic.laststate = 3;
                                                 }
                                             }
+
+                                            if (!(lpIMC->fdwConversion & IME_CMODE_NATIVE)) {
+                                                ChangeMode(hIMC,TO_CMODE_HANGUL);
+                                            }
+                                        } else {
+                                            hangul_ic_init(&ic);
                                         }
                                         // 
                                         DeleteChar(hIMC,wParam);

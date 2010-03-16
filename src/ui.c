@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: ui.c,v 1.35 2010/03/12 02:08:57 wkpark Exp $
+ * $Id: ui.c,v 1.36 2010/03/13 16:44:46 wkpark Exp $
  */
 
 /**********************************************************************/
@@ -283,9 +283,6 @@ LPARAM lParam;
             SetHookFunc();
             //SetConsoleHookFunc();
             InitLanguageBar();
-
-            // get ScanCode based setting.
-            dwScanCodeBased = GetDwordFromSetting(TEXT("ScanCodeBased"));
 
             break;
 

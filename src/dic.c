@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.50 2010/03/12 14:13:13 wkpark Exp $
+ * $Id: dic.c,v 1.51 2010/03/16 14:45:39 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1758,7 +1758,7 @@ LPBYTE lpbKeyState;
                                 // clause dictionary.
                                 *(LPMYSTR)(lpDump + lpRS->dwCompStrLen) = MYTEXT('\0');
                             } else  {
-                                const LPMYSTR szSep = MYTEXT("\r\n\t");
+                                const LPMYSTR szSep = MYTEXT(" \r\n\t");
                                 LPMYSTR lpToken;
                                 // one char reconversion.
                                 *(LPMYSTR)(lpDump + 1) = MYTEXT('\0');

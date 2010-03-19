@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru.h,v 1.32 2010/03/12 04:25:54 wkpark Exp $
+ * $Id: saenaru.h,v 1.33 2010/03/16 15:28:28 wkpark Exp $
  */
 
 #include <indicml.h>
@@ -87,6 +87,16 @@
 #define SEARCH_SIMILAR_WORDS   0x00002000
 #define USE_CTRL_SPACE         0x00004000
 #define SCANCODE_BASED         0x00010000
+
+#define MASK_LSHIFT         0x00010000
+#define MASK_LCTRL          0x00020000
+#define MASK_LALT           0x00040000
+#define MASK_RSHIFT         0x00100000
+#define MASK_RCTRL          0x00200000
+#define MASK_RALT           0x00400000
+#define MASK_SHIFT          0x00110000
+#define MASK_CTRL           0x00220000
+#define MASK_ALT            0x00440000
 
 /* for Unicode SAENARU */
 typedef LPTSTR            LPMYSTR;
@@ -395,6 +405,7 @@ extern DWORD dwComposeFlag;
 extern DWORD dwOptionFlag;
 extern DWORD dwHanjaMode;
 extern DWORD dwScanCodeBased;
+extern DWORD dwToggleKey;
 
 extern DWORD dwImeFlag;
 

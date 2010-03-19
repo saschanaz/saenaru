@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: kbddvk.h,v 1.2 2010/03/15 09:29:05 wkpark Exp $
+ * $Id: kbddvk.h,v 1.3 2010/03/15 13:35:04 wkpark Exp $
  */
 
 /****************************** Module Header ******************************\
@@ -151,7 +151,7 @@
 #undef  T35
  #define T35 _EQ(                                        'Z'                      )
 
-#if defined KBD_TYPE == 10
+#if ( KBD_TYPE == 10 )
  #undef T5C
   #define T5C _EQ(                                       RMENU                     )
  #undef X5C

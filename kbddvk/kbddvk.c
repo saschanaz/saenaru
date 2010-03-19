@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id$
+ * $Id: kbddvk.c,v 1.2 2010/03/15 09:29:05 wkpark Exp $
  */
 
 /***************************************************************************\
@@ -404,6 +404,8 @@ static ALLOC_SECTION_LDATA VSC_LPWSTR aKeyNamesExt[] = {
     0x5b,    L"Left Windows",
     0x5c,    L"Right Windows",
     0x5d,    L"Application",
+    0xf1,    L"Hanguel",
+    0xf1,    L"Hanja",
     0   ,    NULL
 };
 

@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: ui.c,v 1.37 2010/03/16 15:28:28 wkpark Exp $
+ * $Id: ui.c,v 1.38 2010/03/19 08:56:12 wkpark Exp $
  */
 
 /**********************************************************************/
@@ -1407,7 +1407,18 @@ LRESULT CALLBACK SAENARUKbdProc(int code, WPARAM wParam, LPARAM lParam)
                 }
 
                 // WM_SYSKEYXXX events can't posted to ImeProcesskey()
-                // so make this events as WM_KEYXXX...
+                // so ChangeMode() in it.
+                if (lpmsg->message == WM_SYSKEYDOWN) {
+                    HWND hwnd = GetFocus();
+                    if (hwnd != NULL) {
+                        HIMC hIMC = NULL;
+                        hIMC = ImmGetContext(hwnd);
+                        if (hIMC)
+                            ChangeMode(hIMC, TO_CMODE_HANGUL);
+                    }
+                }
+
+                // make this events as WM_KEYXXX...
                 // but still ImeProcesskey() doesn't accept it.
                 if (lpmsg->message > WM_KEYUP)
                     lpmsg->message-=4; // WM_SYSKEYUP - WM_KEYUP = 4. See WINUSER.H

@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: config.c,v 1.18 2010/03/19 08:47:42 wkpark Exp $
+ * $Id: config.c,v 1.19 2010/03/19 16:59:07 wkpark Exp $
  */
 
 #include "windows.h"
@@ -79,7 +79,7 @@ BOOL WINAPI ImeConfigure(HKL hKL,HWND hWnd, DWORD dwMode, LPVOID lpData)
     ImeLog(LOGF_API, TEXT("ImeConfigure"));
 
     psh.dwSize = sizeof(psh);
-    psh.dwFlags = PSH_PROPTITLE;
+    psh.dwFlags = PSH_PROPTITLE | PSH_NOAPPLYNOW;
     psh.hwndParent = hWnd;
     psh.hInstance = hInst;
     psh.pszCaption = MAKEINTRESOURCE(IDS_CONFIGNAME);

@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.54 2010/03/18 03:04:10 wkpark Exp $
+ * $Id: dic.c,v 1.55 2010/03/19 21:57:16 wkpark Exp $
  */
 
 #include <windows.h>
@@ -2732,6 +2732,9 @@ int CopyCandidateStringsFromDictionary(HANDLE hFile, LPMYSTR lpRead, LPMYSTR lpB
                 // 뜻이 길 경우는 잘라냄. FIXME
                 if (NULL != (lpTemp = Mystrchr(lpToken, MYTEXT(','))))
                     *lpTemp = MYTEXT('\0');
+                // strip \r
+                else if (NULL != (lpTemp2 = Mystrchr(lpToken, MYTEXT('\r'))))
+                    *lpTemp2 = MYTEXT('\0');
 
                 len = Mylstrlen(lpToken);
             }

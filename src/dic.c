@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.55 2010/03/19 21:57:16 wkpark Exp $
+ * $Id: dic.c,v 1.56 2010/03/21 13:26:20 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1968,7 +1968,10 @@ LPBYTE lpbKeyState;
                 OutputDebugString(TEXT("DicKeydown: WM_IME_KEYDOWN #2\r\n"));
             }
             if (!candOk) {
-                ConvHanja(hIMC,1,0);
+                if (IsConvertedCompStr(hIMC))
+                    ConvHanja(hIMC,1,0);
+                else
+                    ConvHanja(hIMC,0,0);
             }
             ImmUnlockIMC(hIMC);
             return TRUE;

@@ -1,6 +1,6 @@
 ﻿; Saenaru Installation Script
 ; Written by Hye-Shik Chang <perky@i18n.org>
-; $Id: saenaru.nsi,v 1.13 2010/03/18 02:20:55 wkpark Exp $
+; $Id: saenaru.nsi,v 1.14 2010/03/22 14:45:50 wkpark Exp $
 
 !define RELVERSION      "1.1.0cvs-snapshot"
 !define APPNAME         "새나루 스냅샷 ${RELVERSION}"
@@ -167,8 +167,8 @@ Section "새나루 입력기" SecBody
   WriteRegStr HKCU "${REGISTRY_PATH}\Dictionary" "Word" "word.dic"
   WriteRegStr HKCU "${REGISTRY_PATH}\Dictionary" "HanjaIndex" "jinsuk.dic"
 
-  WriteRegStr HKCU "${REGISTRY_PATH}" "OptionFlag" "9"
-  ;WriteRegStr HKCU "${REGISTRY_PATH" "LayoutFlag" "1"
+  WriteRegDWORD HKCU "${REGISTRY_PATH}" "OptionFlag" 169
+  WriteRegDWORD HKCU "${REGISTRY_PATH" "LayoutFlag" "1"
   
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"

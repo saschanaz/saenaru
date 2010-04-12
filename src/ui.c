@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: ui.c,v 1.41 2010/03/22 12:38:23 wkpark Exp $
+ * $Id: ui.c,v 1.42 2010/03/25 05:56:33 wkpark Exp $
  */
 
 /**********************************************************************/
@@ -291,7 +291,9 @@ LPARAM lParam;
             MyDebugPrint((TEXT("WM_CREATE\n")));
             SetHookFunc();
             //SetConsoleHookFunc();
-            InitLanguageBar();
+            if (InitLanguageBar()) {
+                ActivateLanguageBar(TRUE);
+            }
 
             break;
 
@@ -568,7 +570,7 @@ LPARAM lParam;
 
             MyDebugPrint((TEXT("WM_DELETE\n")));
             UnsetHookFunc();
-            //XXX ActivateLanguageBar(FALSE);
+            ActivateLanguageBar(FALSE);
             //XXX UninitLanguageBar();
             //UnsetConsoleHookFunc();
 

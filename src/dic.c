@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.56 2010/03/21 13:26:20 wkpark Exp $
+ * $Id: dic.c,v 1.57 2010/03/24 14:48:39 wkpark Exp $
  */
 
 #include <windows.h>
@@ -444,8 +444,8 @@ BOOL PASCAL ConvHanja(HIMC hIMC, int offset, int select)
                   Mylstrlen(GETLPCOMPREADSTR(lpCompStr)));
 
             GnMsg.message = WM_IME_COMPOSITION;
-            GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
-            //GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
+            //GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
+            GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
             if (lpCompStr->dwCompStrLen > 1 || isasc) {
                 GnMsg.wParam = 0;
             } else {
@@ -925,8 +925,8 @@ void PASCAL DeleteChar( HIMC hIMC ,UINT uVKey)
         {
             GnMsg.message = WM_IME_COMPOSITION;
             GnMsg.wParam = cs;
-            //GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
-            GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
+            GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
+            //GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
             if (dwImeFlag & SAENARU_ONTHESPOT)
                 GnMsg.lParam |= CS_INSERTCHAR | CS_NOMOVECARET;
             GenerateMessage(hIMC, lpIMC, lpCurTransKey,(LPTRANSMSG)&GnMsg);
@@ -948,8 +948,8 @@ void PASCAL DeleteChar( HIMC hIMC ,UINT uVKey)
 
             GnMsg.message = WM_IME_COMPOSITION;
             GnMsg.wParam = 0;
-            //GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
-            GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
+            GnMsg.lParam = GCS_COMPALL | GCS_CURSORPOS | GCS_DELTASTART;
+            //GnMsg.lParam = GCS_COMPSTR | GCS_COMPATTR; // 한글 IME 2002,2003
             if (dwImeFlag & SAENARU_ONTHESPOT)
                 GnMsg.lParam |= CS_INSERTCHAR | CS_NOMOVECARET;
             GenerateMessage(hIMC, lpIMC, lpCurTransKey,(LPTRANSMSG)&GnMsg);

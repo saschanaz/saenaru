@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.57 2010/03/24 14:48:39 wkpark Exp $
+ * $Id: dic.c,v 1.58 2010/04/12 10:13:34 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1321,6 +1321,12 @@ LPBYTE lpbKeyState;
         LPCANDIDATEINFO lpCandInfo;
         LPCANDIDATELIST lpCandList;
         DWORD cand_style = dwCandStyle;
+        DWORD hkey, mycode;
+
+        hkey = checkHangulKey( hIMC, wParam, lParam ,lpbKeyState);
+        if (hkey >= 0x1100 && hkey <= 0x11ff) {
+            return FALSE;
+        }
 
         if ((wParam == VK_LEFT || wParam == VK_RIGHT) && (lpIMC = ImmLockIMC(hIMC)) ) {
             lpCandInfo = (LPCANDIDATEINFO)ImmLockIMCC(lpIMC->hCandInfo);

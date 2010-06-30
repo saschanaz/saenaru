@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: saenaru.h,v 1.35 2010/03/22 12:38:23 wkpark Exp $
+ * $Id: saenaru.h,v 1.36 2010/04/23 14:23:38 wkpark Exp $
  */
 
 #include <indicml.h>
@@ -540,7 +540,7 @@ void PASCAL MakeAttrClause( LPCOMPOSITIONSTRING lpCompStr);
 void PASCAL HandleShiftArrow( HIMC hIMC, BOOL fArrow);
 
 /* hangul.c       */
-BOOL PASCAL checkHangulKey(HIMC,UINT,LPARAM,LPBYTE);
+DWORD PASCAL checkHangulKey(HIMC,UINT,LPARAM,LPBYTE);
 void PASCAL hangulKeyHandler(HIMC,WPARAM,LPARAM,LPBYTE);
 WCHAR PASCAL keyToHangulKey(WCHAR);
 WORD PASCAL checkDvorak(WORD);

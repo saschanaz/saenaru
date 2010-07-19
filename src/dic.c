@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.58 2010/04/12 10:13:34 wkpark Exp $
+ * $Id: dic.c,v 1.59 2010/04/23 14:23:37 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1326,6 +1326,9 @@ LPBYTE lpbKeyState;
         hkey = checkHangulKey( hIMC, wParam, lParam ,lpbKeyState);
         if (hkey >= 0x1100 && hkey <= 0x11ff) {
             return FALSE;
+        } else if (hkey >= VK_1 && hkey <= VK_9) {
+            // hanja selection key
+            wParam = hkey;
         }
 
         if ((wParam == VK_LEFT || wParam == VK_RIGHT) && (lpIMC = ImmLockIMC(hIMC)) ) {

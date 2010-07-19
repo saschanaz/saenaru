@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: version.h,v 1.6 2010/03/25 06:03:25 wkpark Exp $
+ * $Id: version.h,v 1.7 2010/07/19 19:12:19 wkpark Exp $
  */
 
 #define VER_MAJOR	 1
@@ -40,4 +40,4 @@
 #define VER_PATCHLEVEL	     2
 #define VER_PATCHLEVEL_STR  "2"
 
-#define VER_SNAPSHOT	"CVS 1.1.1"
+#define VER_SNAPSHOT	"CVS 1.1.2"

@@ -27,7 +27,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: dic.c,v 1.60 2010/07/19 17:04:27 wkpark Exp $
+ * $Id: dic.c,v 1.61 2010/08/05 12:23:18 wkpark Exp $
  */
 
 #include <windows.h>
@@ -1715,7 +1715,7 @@ LPBYTE lpbKeyState;
 
         case VK_HANJA:
         case VK_F9:
-            hangul_ic_init(&ic);
+            //hangul_ic_init(&ic);
 
             lpIMC = ImmLockIMC(hIMC);
 
